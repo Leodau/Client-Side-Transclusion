@@ -1,11 +1,19 @@
 # 🎏 Client Side Transclusion (really..)
 ### A proof of concept, live injection of multiple exposed applications into a single base page.
 
+<p align="center">
+  <img src="transclusion.png?raw=true" alt="Web components to the rescue!"/>
+</p>
+
 ## Modules.
 
 ### 1. The VueJS **/plugin**.
 
 Contains an example VueJS application, on build it gets packaged into a webcomponent (see main.js)
+
+<p align="center">
+  <img src="webcomponents.png?raw=true" alt="Web components to the rescue!"/>
+</p>
 
 ```js
 import Vue from "vue";
@@ -24,7 +32,7 @@ window.customElements.define("kuzzle-plugin", wrappedElement);
 
 Is a minimalistic static server in NodeJS, it exposes the **/dist/< plugin name >** folder that should contain our wc packaged (dist) VueJS app.
 
-### 3. The 'base' Service.
+### 3. The 'base' Service. (the main site we want to inject apps into)
 
 Another NodeJS static server, it exposes the *app* folder containing a simple *index.html* file and a *app.js* script that where the magic happends.
 
